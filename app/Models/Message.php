@@ -10,7 +10,7 @@ class Message extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['content', 'sender_name', 'sender_id', 'server_id'];
+    protected $fillable = ['content', 'sender_name', 'server_id'];
 
     public function user(): BelongsTo
     {

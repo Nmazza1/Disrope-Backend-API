@@ -50,16 +50,14 @@ class APIController extends Controller
 
     public function setMessage(Request $request){
         $fields = $request->validate([
-            'content' => 'required|text',
+            'content' => 'required|string',
             'sender_name' => 'required|string',
-            'sender_id' => 'required|integer',
             'server_id' => 'required|integer'
         ]);
 
         $message = Message::create([
             'content' => $fields['content'],
             'sender_name' => $fields['sender_name'],
-            'sender_id' => $fields['sender_id'],
             'server_id' => $fields['server_id']
         ]);
 
